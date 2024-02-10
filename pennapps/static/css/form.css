@@ -1,0 +1,696 @@
+.input {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  z-index: 1;
+  margin: 2em auto 1em;
+  height: 50px;
+  background: #84f4c2;
+  border: 1px solid #84f4c2;
+}
+
+.input .input-field {
+  position: absolute;
+  display: block;
+  float: right;
+  padding: 0.8em;
+  border: none;
+  border-radius: none;
+  font-family: "HalisR-Regular", Helvetica, Arial, sans-serif;
+  top: 0px;
+  right: 100%;
+  width: 60%;
+  height: 100%;
+  background: white;
+  color: #5f5f5f;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  -webkit-appearance: none;
+}
+
+.input .input-field .select2-container--default .select2-selection--single {
+  border: none;
+}
+
+.input .input-field .select2-container--default .select2-selection--single .select2-selection__clear {
+  font-size: 150%;
+}
+
+.congrats-message {
+  width: 75%;
+  margin: 0.75rem auto;
+  text-align: left;
+}
+
+.b-emph {
+  font-style: italic;
+}
+
+.input .input-label {
+  margin: 0;
+  font-weight: normal;
+  position: relative;
+  float: right;
+  padding: 0 1em;
+  color: white;
+  font-family: "HalisR-Regular";
+  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 10;
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  cursor: text;
+  -webkit-transform-origin: 0% 50%;
+  transform-origin: 0% 50%;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.input .input-label .input-label-content {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 15px 0;
+}
+
+.input .input-field:focus,
+.input.input-filled>.input-field {
+  -webkit-transform: translate3d(100%, 0, 0);
+  transform: translate3d(100%, 0, 0);
+  -webkit-transition-delay: 0.06s;
+  transition-delay: 0.06s;
+  outline: none;
+}
+
+.input .input-field:focus+.input-label,
+.input.input-filled .input-label {
+  -webkit-transform: translate3d(60%, 0, 0);
+  transform: translate3d(60%, 0, 0);
+  pointer-events: none;
+}
+
+.eye-vis {
+  position: absolute;
+  display: inline-block;
+  font-family: "Font Awesome 5 Free";
+  vertical-align: middle;
+  top: 15%;
+  left: 52%;
+  width: 10%;
+  height: 15%;
+  border: none;
+  background-color: transparent;
+  padding: 10px;
+  color: #5f5f5f;
+}
+
+.check-in-label {
+  text-align: center;
+}
+
+.hyperlink {
+  color: blue;
+}
+
+.wrap {
+  width: 100%;
+}
+
+.indi-wrap {
+  padding-bottom: 10px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.indi-wrap input {
+  flex: 1;
+}
+
+.indi-wrap label {
+  flex: 17;
+}
+
+.control-label {
+  display: inline-block;
+  font-weight: 300;
+  vertical-align: top;
+  font-family: "HalisR-Regular";
+}
+
+.btn {
+  border-radius: 0px;
+  height: 45px;
+  font-family: "HalisR-Regular";
+  text-transform: uppercase;
+  width: 100%;
+  margin: 2em auto 1em;
+  background-color: white;
+}
+
+.btn.submit-button {
+  color: Black;
+  background-color: #9efff6;
+}
+
+.btn.submit-button:focus,
+.btn.submit-button:active,
+.btn.submit-button:active:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.btn#declineButton {
+  background-color: transparent;
+  border: 2px Black solid;
+  color: Black;
+}
+
+.btn#goingButton {
+  background-color: Black;
+  color: white;
+}
+
+.btn#mlhOptout,
+.btn#selectResume {
+  background-color: #5f5f5f;
+  color: white;
+}
+
+#login-img {
+  max-height: 150px;
+  display: block;
+  margin: auto;
+}
+
+.field-icon {
+  float: right;
+  margin-left: -25px;
+  margin-top: -25px;
+  position: relative;
+  z-index: 2;
+}
+
+.sponsorRSVP {
+  padding: 10px;
+}
+
+.giga {
+  max-height: 300px;
+  max-width: 600px;
+}
+
+.mega {
+  max-height: 200px;
+  max-width: 400px;
+}
+
+.kilo {
+  max-height: 100px;
+  max-width: 200px;
+}
+
+#login-form .submit-button {
+  margin-top: 1em;
+}
+
+.checkbox input[type="checkbox"],
+.checkbox-inline input[type="checkbox"],
+.radio input[type="radio"],
+.radio-inline input[type="radio"] {
+  left: 0px;
+  margin-left: 0px;
+}
+
+.form-label {
+  font-family: "HalisR-Regular";
+  font-size: 16px;
+  margin-top: 2em;
+}
+
+.input-description {
+  font-family: "HalisR-Regular";
+  margin-top: 0.5em;
+}
+
+textarea {
+  width: 100%;
+  min-height: 100px;
+  color: #333;
+  padding: 15px;
+}
+
+.login-links {
+  text-align: center;
+  margin-top: 0.5em;
+}
+
+.btn {
+  line-height: 32px;
+}
+
+a.btn {
+  color: inherit;
+}
+
+input.input-field[type="file"] {
+  padding-top: 1em;
+}
+
+input.input-field[type="file"]::before {
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: Black;
+  margin: 0.8em;
+  padding: 0.3em 22px;
+  color: white;
+  cursor: pointer;
+  content: "Upload";
+}
+
+/* Fixes for Select2 */
+.select2-container--default li.select2-results__option {
+  font-size: inherit;
+}
+
+.toggle_radio {
+  background: white;
+  margin: 4px auto;
+  overflow: hidden;
+  padding: 0 !important;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  position: relative;
+  height: 60px;
+  width: 400px;
+  max-width: 100%;
+}
+
+.toggle_radio>* {
+  float: left;
+}
+
+.toggle_radio input[type="radio"] {
+  display: none;
+  /*position: fixed;*/
+}
+
+.toggle_radio label {
+  color: rgba(255, 255, 255, 0.9);
+  z-index: 0;
+  display: block;
+  height: 100%;
+  width: 50%;
+  margin: 0px;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  border-radius: 60px;
+  cursor: pointer;
+  z-index: 1;
+  text-align: center;
+  position: relative;
+}
+
+.toggle_radio label p {
+  line-height: 60px;
+  width: 100%;
+  margin: 0px;
+  color: white;
+  position: absolute;
+  z-index: 1;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.toggle_radio label.grey_text {
+  transform: translateY(-100%);
+  z-index: 0;
+}
+
+.toggle_radio label.grey_text p {
+  color: #5f5f5f;
+  z-index: 0;
+}
+
+.toggle_option_slider {
+  z-index: 0;
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  background-color: Black;
+  border: 5px solid white;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  border-radius: 60px;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.errorMessage {
+  color: red;
+}
+
+#hackerToggle:checked~.toggle_option_slider {
+  left: 0px;
+}
+
+#guruToggle:checked~.toggle_option_slider {
+  left: 50%;
+}
+
+#hackerToggleLabel p {
+  color: Black;
+}
+
+#hackerToggle:checked~#hackerToggleLabel p {
+  color: white;
+}
+
+#guruToggleLabel p {
+  color: white;
+}
+
+#hackerToggle:checked~#guruToggleLabel p {
+  color: Black;
+}
+
+body.dark {
+  background-color: Black;
+  color: #efefef;
+}
+
+body.dark nav#title h1 {
+  color: white;
+}
+
+body.dark p {
+  color: #efefef;
+}
+
+body.dark a {
+  color: #efefef;
+}
+
+body.dark #nav-username a {
+  color: #efefef;
+}
+
+body.dark .title-wrapper::before {
+  background-color: white;
+}
+
+body.dark .title-wrapper .page-title {
+  background-color: Black;
+}
+
+body.dark .title-wrapper h1 {
+  color: white;
+}
+
+body.dark .toggle_radio {
+  background-color: #efefef;
+}
+
+body.dark .toggle_option_slider {
+  border-color: #efefef;
+}
+
+body.dark .input {
+  background-color: #3f89a9;
+}
+
+body.dark #brand {
+  background-image: url("/images/logo-white.svg");
+}
+
+body.dark footer.copyright {
+  background-color: Black;
+}
+
+input {
+  color: #333;
+}
+
+.large-text {
+  color: #5f5f5f;
+  font-size: 150%;
+  font-weight: normal;
+  font-family: "HalisR-Regular";
+}
+
+.standard-text {
+  color: #5f5f5f;
+  font-size: 100%;
+  font-weight: normal;
+  font-family: "HalisR-Regular";
+}
+
+/* Application CSS */
+#application {
+  margin-top: 2rem;
+}
+
+.section-header {
+  text-align: center;
+  font-family: "HalisR-Black";
+  color: #5f5f5f;
+  background-color: #84f4c2;
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.app-item {
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 1rem;
+  width: 95%;
+}
+
+.app-item input, .app-item textarea {
+  width: 100%;
+  border: 1px solid #84f4c2;
+  font-size: 1rem;
+  font-family: "HalisR-Regular";
+  font-weight: lighter;
+  color: #5f5f5f;
+  padding: 0.8rem;
+}
+
+.app-item label {
+  width: 100%;
+  margin-right: 1rem;
+  font-family: "HalisR-Black";
+}
+
+.app-item select {
+  list-style: none;
+  border: solid 1px #84f4c2;
+  color: #5f5f5f;
+  background-color: white;
+  padding: 1rem;
+  width: 100%;
+  height: 3.25rem;
+  font-size: 1rem;
+  letter-spacing: 1.5px;
+}
+
+.save-submit {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.app-item .btn.submit-button {
+  margin: 0 1rem;
+}
+
+.app-item input[type=file] {
+  font-size: 1rem;
+}
+
+small {
+  font-family: "HalisR-Regular";
+  font-style: italic;
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+  color: red;
+  text-align: left;
+}
+
+.invalid:before {
+  position: relative;
+  left: -35px;
+  content: "✖";
+}
+
+/* Dropdown menu */
+.dropdown, .tt-suggestion, .tt-selectable {
+  position: relative;
+  font-family: "HalisR-Regular";
+  font-weight: normal;
+}
+
+.dropdown select {
+  display: none;
+}
+
+.select-selected {
+  color: #5f5f5f;
+  font-size: 1rem;
+  border: solid 1px #84f4c2;
+}
+
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 1.5rem;
+  right: 1rem;
+  width: 0;
+  height: 0;
+  border: 6px solid;
+  border-color: #5f5f5f transparent transparent transparent;
+}
+
+.select-selected.select-arrow-active:after {
+  border: 6px solid;
+  border-color: transparent transparent #5f5f5f transparent;
+  top: 1rem;
+}
+
+.dropdown-items div, .select-selected {
+  padding: 0.9rem 1rem;
+  height: 51.6px;
+  cursor: pointer;
+}
+
+.dropdown-items {
+  position: absolute;
+  background-color: #5f5f5f;
+  font-size: 1rem;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 9;
+  color: white;
+  border: solid 1px #5f5f5f;
+}
+
+.select-hidden {
+  display: none;
+}
+
+.dropdown-items div:hover, .update-select {
+  background-color: gray;
+}
+
+.tt-suggestion, .tt-selectable {
+  color: white;
+  font-family: "HalisR-Regular", Helvetica, Arial, sans-serif;
+  padding: 0.3rem 0.5rem;
+}
+
+/* The message box is shown when the user clicks on the password field */
+#message {
+  display: none;
+  background: #f1f1f1;
+  color: #000;
+  position: relative;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+#message span {
+  padding: 10px 35px;
+  font-size: 18px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: -35px;
+  content: "✔";
+}
+
+.rsvp-item {
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 1rem;
+  width: 95%;
+}
+
+.rsvp-item input {
+  width: 100%;
+  border: 1px solid #84f4c2;
+  font-size: 1rem;
+  font-family: "HalisR-Regular";
+  font-weight: lighter;
+  color: #5f5f5f;
+  padding: 0.8rem;
+}
+
+.rsvp-item label {
+  width: 100%;
+  margin-right: 1rem;
+  font-family: "HalisR-Black";
+}
+
+.rsvp-item select {
+  list-style: none;
+  border: solid 1px #84f4c2;
+  color: #5f5f5f;
+  background-color: white;
+  padding: 1rem;
+  width: 100%;
+  height: 3.25rem;
+  font-size: 1rem;
+  letter-spacing: 1.5px;
+}
+
+.rsvp-heading {
+  font-weight: bold;
+  font-size: 1.75rem;
+  margin: 4rem 0 2rem 0;
+}
+
+.hidden-error-message {
+  display: none;
+}
+
+.visible-error-message {
+  display: block;
+  margin-top: -1rem;
+  padding-left: 2rem;
+  color: red !important;
+  font-size: 100% !important;
+  font-family: "HalisR-Regular", Helvetica, Arial, sans-serif;
+}

@@ -1,0 +1,160 @@
+{% extends "pennapps/base.html" %}
+
+{% block title %} Application {% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 offset-sm-3">
+
+            <div style="margin-bottom: -20px; margin-top: 30px;" class="title-wrapper">
+                <h1 class="page-title">Application</h1>
+            </div>
+
+            <div style="margin-top: 1rem;"><p class="standard-text">*Denotes required fields</p></div>
+    
+            <form id="application" action="/application" method="POST" name="Form" enctype="multipart/form-data">
+                {% csrf_token %}
+                <h3 class="section-header">Personal Info</h3>
+
+                <span id="school-input" class="app-item">
+                    <label class="standard-text" for="school">
+                        <span class="input-label-content">School*</span><br>
+                    </label>
+                    <input class="typeahead" type="text" name="school" 
+                        {% if is_penn_student %} value="University of Pennsylvania" disabled 
+                        {% else %}  value="{{school}}" 
+                        {% endif %}
+                    >
+                </span>
+                <span id="school-error" class="hidden-error-message">
+                    Please fill out this field!
+                </span>
+
+                <span class="app-item">
+                    <label class="standard-text" for="year">Year*</label>
+                    <div class="dropdown">
+                        <select name="year" value="{{year}}">
+                            {% if year == "" %}<option value="" selected hidden>Select an Option</option>{% endif %}
+                            <option value="nth" {% if year == "nth" %} selected {% endif %}>9th Grade</option>
+                            <option value="ten" {% if year == "ten" %} selected {% endif %}>10th Grade</option>
+                            <option value="ele" {% if year == "ele" %} selected {% endif %}>11th Grade</option>
+                            <option value="twl" {% if year == "twl" %} selected {% endif %}>12th Grade</option>
+                            <option value="fr" {% if year == "fr" %} selected {% endif %}>Freshman</option>
+                            <option value="so" {% if year == "so" %} selected {% endif %}>Sophomore</option>
+                            <option value="ju" {% if year == "ju" %} selected {% endif %}>Junior</option>
+                            <option value="se" {% if year == "se" %} selected {% endif %}>Senior</option>
+                            <option value="gr" {% if year == "gr" %} selected {% endif %}>Grad</option>
+                        </select>
+                    </div>
+                </span>
+                <span id="year-error" class="hidden-error-message">
+                    Please fill out this field!
+                </span>
+
+                <span class="app-item">
+                    <label class="standard-text">
+                        <span class="input-label-content">Major</span>
+                    </label>
+                    <input class="input-field" type="text" name="major" value="{{major}}">
+                </span>
+                
+
+                <span class="app-item">
+                    <label class="standard-text">
+                        <span class="input-label-content">Phone Number*</span><br>
+                        <small style="font-family: HalisR-Regular; font-style: italic;">
+                            In form 123-456-7890</small>
+                    </label>
+                    <input type="text" id="phone" name="phone_number"
+                        value="{% if phone_number %}{{phone_number|cut:' '}}{% endif %}"
+                        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                </span>
+                <span id="phone_number-error" class="hidden-error-message">
+                    Please fill out this field!
+                </span>
+
+                <span class="app-item">
+                    <label class="standard-text">
+                        <span class="input-label-content">Birthday*</span>
+                    </label>
+                    <input type="date" id="birthday" name="birthday"
+                        value="{% if birthday %}{{ birthday|date:'Y-m-d' }}{% endif %}">
+                </span>
+                <span id="birthday-error" class="hidden-error-message">
+                    Please fill out this field!
+                </span>
+
+                <h3 class="section-header">Short Answer</h3>
+                <span class="app-item">
+                    <label class="standard-text">
+                        <span class="input-label-content">{{hackathon.q1}}*</span>
+                        <small>(150 words max)</small>
+                    </label>
+                    <textarea name="q1" form="application">{{q1}}</textarea>
+                </span>
+                <span id="q1-error" class="hidden-error-message">
+                    Please fill out this field!
+                </span>
+
+                <span class="app-item">
+                    <label class="standard-text">
+                        <span class="input-label-content">{{hackathon.q2}}*</span>
+                        <small>(150 words max)</small>
+                    </label>
+                    <textarea name="q2" form="application">{{q2}}</textarea>
+                </span>
+                <span id="q2-error" class="hidden-error-message">
+                    Please fill out this field!
+                </span>
+
+                <h3 class="section-header">Hackathon Experience</h3>
+
+                <span class="app-item">
+                    <label class="standard-text" for="first_hackathon">Will this be your first hackathon?*</label>
+                    <div class="dropdown">
+                        <select name="first_hackathon">
+                            <option value="y" {% if first_hackathon %} selected {% endif %}>Yes</option>
+                            <option value="n" {% if not first_hackathon %} selected {% endif %}>No</option>
+                        </select>
+                    </div>
+                </span>
+
+
+                <span class="app-item">
+                    <label class="standard-text" for="team_member_1">
+                        <span class="input-label-content">If you are a part of a team,
+                            please enter the emails of your team members.</span>
+                    </label>
+                    <input type="text" name="team_member_1"
+                        value="{{team_member_1}}"
+                        placeholder="team_member1@some.site">
+                    </input><br style="height: 3px;">
+                    <input type="text" name="team_member_2"
+                        value="{{team_member_2}}"
+                        placeholder="team_member2@some.site">
+                    </input><br style="height: 3px;">
+                    <input type="text" name="team_member_3"
+                        value="{{team_member_3}}"
+                        placeholder="team_member3@some.site">
+                    </input>
+                </span>
+
+                <span class="app-item">
+                    <div class="save-submit">
+                        <input class="btn submit-button" type="submit" name="Submit" formaction="/submit-application"
+                            value="Submit">
+                    </div>
+                </span>
+            </form>
+        
+
+            {% load static %}
+            <script src="{% static 'js/dropdowns.js' %}"></script>
+            <script src="{% static 'js/typeahead.js' %}"></script>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

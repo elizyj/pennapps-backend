@@ -26,6 +26,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Default redirect for unauthenticated users
+LOGIN_URL = '/login/'
+
 # Application definition
 
 INSTALLED_APPS = [

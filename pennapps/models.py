@@ -15,5 +15,8 @@ class Application(models.Model):
     ]
 
     applicant = models.OneToOneField(get_user_model(), on_delete=models.CASCADE)
-    status = models.CharField(max_length=4, choices=STATUS_CHOICES, default="STRT")
+    status = models.CharField(max_length=4, choices=STATUS_CHOICES, default="PROC")
+    project_idea = models.TextField()
+    skills = models.CharField(max_length=255)
+    resume = models.FileField(upload_to='resumes/', null=True, blank=True)
     
